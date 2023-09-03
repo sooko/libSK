@@ -1,0 +1,10 @@
+global-include *.png
+global-include *.kv
+global-include *.json
+global-include *.ttf
+global-include *.vaw
+global-include *.txt
+global-include *.otf
+
+
+
