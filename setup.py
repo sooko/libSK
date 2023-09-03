@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 setup(
     name='libsk',
-    version='1.0',
+    version='1.1',
     packages=find_packages(),
     url='https://github.com/sooko/libsk.git',
     license='MIT',
