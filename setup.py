@@ -3,7 +3,7 @@ setup(
     name='libsk',
     version='1.1',
     packages=find_packages(),
-    url='https://github.com/sooko/libsk.git',
+    url='https://github.com/sooko/libsk',
     license='MIT',
     author='Burhan',
     author_email='hansmotor89@gmail.com',
