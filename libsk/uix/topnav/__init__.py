@@ -14,9 +14,16 @@ class TopNav(BoxLayout):
     background_color=ColorProperty([1,1,1,1])
     def __init__(self, **kwargs):
         super(TopNav,self).__init__(**kwargs)
+
 class TopNavButton(RippleButton):
     icon_name=StringProperty("../libsk/assest/fonts/ico.ttf")
     icon=StringProperty("\ue5c4")
+
+class TopNavIcon(Label):
+    icon_name=StringProperty("../libsk/assest/fonts/ico.ttf")
+    icon=StringProperty("\ue5c4")
+    def __init__(self, **kwargs):
+        super(TopNavIcon,self).__init__(**kwargs)
 
 class TopNavBackButton(TopNavButton):
     icon=StringProperty("\ue5c4")

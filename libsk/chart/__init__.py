@@ -227,7 +227,7 @@ class SKChart(FloatLayout):
     label_y_color    =ListProperty([1,1,1,1])
     horizon_spacer_width  =NumericProperty(20)
     vertical_spacer_height=NumericProperty(20)    
-    
+
 
     def __init__(self, **kwargs):
         super(SKChart,self).__init__(**kwargs)
@@ -255,7 +255,4 @@ class SKChart(FloatLayout):
             self.ids.root_label_x.add_widget(SKChartLabelX(color=self.label_x_color,font_size=self.label_font_size,text=str(self.format_float(x_label))))
     
     
-
-
-        
 

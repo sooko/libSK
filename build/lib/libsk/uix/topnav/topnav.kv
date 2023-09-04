@@ -13,7 +13,6 @@
     alpa:[1]
     main_color:[1,1,1]
     color: self.main_color+self.alpa
-    font_size:self.height
     font_name: root.icon_name
     text: root.icon
     size_hint:None,1
@@ -29,3 +28,9 @@
     valign:"middle"
     text_size:self.size
     text:"App Name"
+<TopNavIcon>:
+    font_name: root.icon_name
+    text: root.icon
+    size_hint:None,1
+    width: self.height
+    font_size:self.height*.75
