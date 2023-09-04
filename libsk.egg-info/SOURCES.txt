@@ -23,9 +23,12 @@ libsk/assest/fonts/twotone.otf
 libsk/assest/fonts/twotone.txt
 libsk/assest/fonts/zeroes.ttf
 libsk/chart/__init__.py
+libsk/menus/__init__.py
+libsk/menus/menus.kv
 libsk/uix/__init__.py
 libsk/uix/ripple.py
 libsk/uix/carts/__init__.py
+libsk/uix/carts/cart.kv
 libsk/uix/navigationdrawer/__init__.py
 libsk/uix/navigationdrawer/navigationdrawer.kv
 libsk/uix/navigationdrawer/navigationdrawer_gradient_ltor.png

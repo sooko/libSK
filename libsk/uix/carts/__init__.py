@@ -2,27 +2,13 @@ from kivy.uix.floatlayout import FloatLayout
 from kivy.lang.builder import Builder
 from kivy.properties import ListProperty,StringProperty,NumericProperty,ColorProperty
 from kivy.metrics import dp
-Builder.load_string("""
-<Cart>:
-    canvas:
-        Color:
-            rgba: root.shadow_color
-        BoxShadow:
-            pos: self.pos
-            size: self.size
-            offset:root.offset
-            spread_radius: root.spread_radius#-20, -20
-            border_radius: root.border_radius#10, 10, 10, 10
-            blur_radius: root.blur_radius#80 
-        Color:
-            rgba: root.background_color
-        RoundedRectangle:
-            size: self.size[0], self.size[1]
-            pos: self.pos
-            radius:root.radius
-                    
+import os.path
+from kivy.resources import resource_add_path
+resource_add_path(os.path.dirname(__file__))
 
-""")
+Builder.unload_file("cart.kv")
+Builder.load_file("cart.kv")
+
 class Cart(FloatLayout):
     radius=ListProperty([dp(5),dp(5),dp(5),dp(5)])
     offset=ListProperty([0, -10])
