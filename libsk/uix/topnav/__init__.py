@@ -36,16 +36,12 @@ class TopNavSettingButton(TopNavButton):
 
 class TopNavQRButton(TopNavButton):
     icon=StringProperty("\uef6b")
+class TopNavMoreButton(TopNavButton):
+    icon=StringProperty("\ue5d4")
 
 class TopNavCameraButton(TopNavButton):
     icon=StringProperty("\ue3af")
 
-
-
 class TopNavAppName(Label):
     pass
-
-
-
-
 
