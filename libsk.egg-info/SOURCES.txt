@@ -1,6 +1,8 @@
 MANIFEST.in
 setup.py
+test.kv
 libsk/__init__.py
+libsk/libsk.kv
 libsk/resources.py
 libsk.egg-info/PKG-INFO
 libsk.egg-info/SOURCES.txt
@@ -26,7 +28,7 @@ libsk/chart/__init__.py
 libsk/menus/__init__.py
 libsk/menus/menus.kv
 libsk/uix/__init__.py
-libsk/uix/ripple.py
+libsk/uix/__ripple.py
 libsk/uix/carts/__init__.py
 libsk/uix/carts/cart.kv
 libsk/uix/navigationdrawer/__init__.py
@@ -34,5 +36,9 @@ libsk/uix/navigationdrawer/navigationdrawer.kv
 libsk/uix/navigationdrawer/navigationdrawer_gradient_ltor.png
 libsk/uix/navigationdrawer/navigationdrawer_gradient_rtol.png
 libsk/uix/navigationdrawer/__pycache__/__init__.cpython-310.pyc
+libsk/uix/responsive_grid/__init__.py
+libsk/uix/responsive_grid/responsive_grid.kv
+libsk/uix/ripple/__init__.py
+libsk/uix/sparator/__init__.py
 libsk/uix/topnav/__init__.py
 libsk/uix/topnav/topnav.kv
