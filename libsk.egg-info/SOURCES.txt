@@ -9,6 +9,7 @@ libsk.egg-info/SOURCES.txt
 libsk.egg-info/dependency_links.txt
 libsk.egg-info/requires.txt
 libsk.egg-info/top_level.txt
+libsk/assest/fonts/Avalon.ttf
 libsk/assest/fonts/batmfa.ttf
 libsk/assest/fonts/bebas.ttf
 libsk/assest/fonts/bike_studio.ttf

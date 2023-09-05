@@ -2,17 +2,8 @@
 <MenuItemTextUnderIcon>:        
     pos_hint: {'center_x': 0.5,'center_y': 0.5}
     BoxLayout:
-        # canvas:
-        #     Color:
-        #         rgba: [1, .5, 0, 1]
-        
-        #     RoundedRectangle:
-        #         size: self.size[0]-dp(5), self.size[1]-dp(5)
-        #         pos: self.pos[0]+dp(2.5),self.pos[1]+dp(2.5)
-        #         radius: [dp(5), dp(5),dp(5),dp(5)]
-        
         size_hint:None,None
-        size:min(self.parent.size),min(self.parent.size)
+        size:min(self.parent.size)*.9,min(self.parent.size)*.9
         pos_hint: {'center_x': 0.5,'center_y': 0.5}
         orientation: 'vertical'
         FloatLayout:
@@ -28,12 +19,15 @@
                         pos: self.pos
                         radius: [dp(10), dp(10),dp(10), dp(10)]
                         source:root.data["icon"]
+                        
         Label:
             text: root.data["name"]
             color:
             size_hint:1,None
-            height:dp(25)
-            font_size: dp(16)
+            height:dp(20)
+            font_size: dp(14)
+            font_name: '../assest/fonts/Avalon.ttf'
+
     RippleButton:
         size_hint:None,None
         size:min(self.parent.size),min(self.parent.size)
