@@ -4,7 +4,7 @@ setup(
     version='1.2',
     packages=find_packages(),
     include_package_data=True,
-    url='https://github.com/sooko/libsk',
+    url='https://github.com/sooko/libsk.git',
     license='MIT',
     author='Burhan',
     author_email='hansmotor89@gmail.com',
