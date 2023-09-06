@@ -19,6 +19,7 @@ Builder.load_string("""
         Line:
             points:self.x,self.y+self.padding,self.x,self.top-self.padding
 
+                    
 """)
 class SparatorVertical(Widget):
     color=ColorProperty([1,1,1,1])

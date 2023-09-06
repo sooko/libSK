@@ -12,7 +12,9 @@ import sys
 import hashlib
 from kivy.clock import Clock
 from kivy.lang.builder import Builder
-Builder.load_file("test.kv")
+Builder.unload_file("t.kv")
+Builder.load_file("t.kv")
+
 def md5_checksum_directory(directory):
     md5_hash = hashlib.md5()
     for dirpath, dirnames, filenames in os.walk(directory):
@@ -24,10 +26,12 @@ def md5_checksum_directory(directory):
     return md5_hash.hexdigest()
 
 
+
 class Ml(FloatLayout):
     md5=""
     contain_module="libsk"
     project_dir="libsk"
+    list_sys=[]
     def __init__(self, **kwargs):
         super(Ml,self).__init__(**kwargs)
         self.initial_modules = set(sys.modules.keys())
@@ -36,10 +40,21 @@ class Ml(FloatLayout):
         md5_dir= md5_checksum_directory(self.project_dir)
         if self.md5 != md5_dir:
             self.md5=md5_dir
-            
-            for module in set(sys.modules.keys()) - self.initial_modules:
-                if self.contain_module in module:
-                    del sys.modules[module]
+            for i in sys.modules:
+                # print(i)
+                # if 
+                if self.contain_module in i:
+                    # print(i)
+                    self.list_sys.append(i)
+                    # del sys.modules[i]
+            for i in self.list_sys:
+                if i in sys.modules:
+                    del sys.modules[i]
+                
+            # for module in set(sys.modules) :#- self.initial_modules:
+            #     print(module)
+                # if self.contain_module in module:
+                #     del sys.modules[module]
                     
             Clock.schedule_once(self.delay,.5)
     def delay(self,dt):
@@ -60,3 +75,4 @@ class TestApp(App):
 
 if __name__ == '__main__':
     TestApp().run()
+

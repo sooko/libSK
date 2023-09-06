@@ -1,0 +1,18 @@
+<LibskEllipse>:
+    canvas.before:
+        PushMatrix:
+        Rotate: 
+            origin:self.center
+            angle:root.rotate_angle
+        Color:
+            rgba:root.color 
+        Ellipse:
+            pos:self.pos
+            size:self.size
+            angle_start:root.angle_start
+            angle_end:root.angle_end
+            source:root.source
+    canvas.after:
+        PopMatrix:
+
+

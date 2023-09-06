@@ -1,7 +1,7 @@
 <TopNav>:
     size_hint: 1, None
     height:dp(40)
-    canvas:
+    canvas.before:
         Color:
             rgba:root.background_color
         Rectangle:
@@ -17,7 +17,7 @@
     text: root.icon
     size_hint:None,1
     width: self.height
-    font_size:self.height*.75
+    # font_size:self.height*.75
     on_press: self.alpa=[.5]
     on_release: self.alpa=[1]
     

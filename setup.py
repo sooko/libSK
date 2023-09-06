@@ -9,7 +9,7 @@ setup(
     author='Burhan',
     author_email='hansmotor89@gmail.com',
     description='Description of your project',
-    install_requires=[
-        'kivy',
-    ],
+    # install_requires=[
+    #     'kivy',
+    # ],
 )

@@ -1,4 +1,5 @@
 #: import RippleButton libsk.uix.ripple.RippleButton
+
 <MenuItemTextUnderIcon>:        
     pos_hint: {'center_x': 0.5,'center_y': 0.5}
     BoxLayout:
@@ -13,7 +14,7 @@
                 size:min(self.parent.size),min(self.parent.size)
                 canvas:
                     Color:
-                        rgba:1,1,1,1
+                        rgba:root.icon_color
                     RoundedRectangle:
                         size: self.size[0], self.size[1]
                         pos: self.pos
@@ -22,25 +23,65 @@
                         
         Label:
             text: root.data["name"]
-            color:
+            color:root.name_color
             size_hint:1,None
-            height:dp(20)
-            font_size: dp(14)
-            font_name: '../assest/fonts/Avalon.ttf'
+            height:dp(16)
+            font_size: root.icon_font_size
+            font_name: '../assets/fonts/aggresa.ttf'
+            bold:True
 
     RippleButton:
         size_hint:None,None
         size:min(self.parent.size),min(self.parent.size)
         on_press:root.dispatch("on_press")
         pos_hint: {'center_x': 0.5,'center_y': 0.5}
-        
+<MenuItemTextBesideIcon>:
+    selected_color:0,0,1,1
+    not_selected_color:0,0,0,0
+    selection_source:""
+    
+    ToggleButton:
+        group:"menus"
+        pos_hint: {'center_x': 0.5,'center_y': 0.5}
+        on_press:self.state="down"
+        background_color:0,0,0,0
+        canvas.before:
+            Color:
+                rgba: root.selected_color if self.state=="down" else root.not_selected_color
+            RoundedRectangle:
+                size: self.size[0], self.size[1]
+                pos: self.pos
+                radius: root.radius
+                source:root.selection_source
+
+    BoxLayout:
+        pos_hint: {'center_x': 0.5,'center_y': 0.5}
+        Label:
+            size_hint:None,1
+            width:self.height
+            text:root.data["icon"]
+            font_name:root.icon_font_name
+            font_size:root.icon_font_size
+        Label:
+            text:root.data["name"]
+            font_size:root.icon_font_size
+            halign:"left"
+            valign:"middle"
+            text_size:self.size
+            font_name:root.name_font_name
+# <MenuItemTextBesideIcon>:
+#     selected_color:0,1,1,1
+
+#     not_selected_color:0,0,0,0
+
+
+
+
 
 <GridMenu>:
     cols:3
     size_hint: 1, None
     height:self.minimum_height
-    row_default_height:min(self.width/self.cols,dp(200))
-    # col_default_width: min(self.width/self.cols,dp(200))
     
     
     
