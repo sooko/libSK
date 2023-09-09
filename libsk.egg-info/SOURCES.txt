@@ -37,6 +37,7 @@ libsk/uix/__init__.py
 libsk/uix/__ripple.py
 libsk/uix/carts/__init__.py
 libsk/uix/carts/cart.kv
+libsk/uix/loading/__init__.py
 libsk/uix/navigationdrawer/__init__.py
 libsk/uix/navigationdrawer/navigationdrawer.kv
 libsk/uix/navigationdrawer/navigationdrawer_gradient_ltor.png
