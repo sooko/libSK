@@ -6,26 +6,40 @@ from kivy.metrics import dp
 from kivy.properties import StringProperty, NumericProperty, DictProperty,ListProperty
 Builder.load_string("""
 <LoadingCircle>:
-    Widget:
-        pos_hint: {'center_x': 0.5,'center_y': 0.5}
-        size_hint: 1*root.scale/100 , 1*root.scale/100
-        canvas:
-            Color:
-                rgba: root.background_color
-            Line:
-                width: root.line_width*1.8
-                circle:
-                    (self.center_x, self.center_y, min(self.width, self.height)
-                    /2)
-                cap:"none"
-            Color:
-                rgba: root.color
-            Line:
-                width: root.line_width
-                circle:
-                    (self.center_x, self.center_y, min(self.width, self.height)
-                    /2,root.angle[0],root.angle[1])
-                cap:"none"
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint:1,None
+        height:self.minimum_height
+        pos_hint: {'center_x': 0.5,'center_y': 0.7}
+        Widget:
+            size_hint:None,None
+            pos_hint: {'center_x': 0.5,'center_y': 0.5}
+            size:min(root.size)*root.scale/100 , min(root.size)*root.scale/100
+            
+            canvas:
+                Color:
+                    rgba: root.background_color
+                Line:
+                    width: root.line_width*1.8
+                    circle:
+                        (self.center_x, self.center_y, min(self.width, self.height)
+                        /2)
+                    cap:"none"
+                Color:
+                    rgba: root.color
+                Line:
+                    width: root.line_width
+                    circle:
+                        (self.center_x, self.center_y, min(self.width, self.height)
+                        /2,root.angle[0],root.angle[1])
+                    cap:"none"
+        Label:
+            size_hint:1,None
+            height:dp(100)
+            text: root.loading_text
+            font_size: dp(18)
+        
+    
 
 """)
 class LoadingCircle(FloatLayout):
@@ -34,8 +48,10 @@ class LoadingCircle(FloatLayout):
     transition="in_sine"
     angle=ListProperty([0,0])
     anim_speed=NumericProperty(.8)
-    scale=NumericProperty(30)
+    scale=NumericProperty(20)
     line_width=NumericProperty(dp(3))
+    loading_text=StringProperty("")
+
     anim=None
     def __init__(self, **kwargs):
         super(LoadingCircle,self).__init__(**kwargs)
@@ -51,14 +67,3 @@ class LoadingCircle(FloatLayout):
             if not b:
                 print("close_anim")
                 self.anim.cancel_all(self)
-
-# from kivy.app import App
-# class LoadingApp(App):
-#     def build(self):
-#         return LoadingCircle()
-
-
-# if __name__=="__main__":
-#     LoadingApp().run()
-
-    
