@@ -6,6 +6,7 @@ from kivy.resources import resource_add_path
 resource_add_path(os.path.dirname(__file__))
 Builder.unload_file("libsk.kv")
 Builder.load_file("libsk.kv")
+from libsk.uix.toast import Toast
 from .shape import LibskEllipse
 from .menus import GridMenu,MenuItemTextBesideIcon
 class LibSK(FloatLayout):

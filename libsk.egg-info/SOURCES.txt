@@ -47,5 +47,6 @@ libsk/uix/responsive_grid/__init__.py
 libsk/uix/responsive_grid/responsive_grid.kv
 libsk/uix/ripple/__init__.py
 libsk/uix/sparator/__init__.py
+libsk/uix/toast/__init__.py
 libsk/uix/topnav/__init__.py
 libsk/uix/topnav/topnav.kv

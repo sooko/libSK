@@ -58,7 +58,6 @@ class Ml(FloatLayout):
                     
             Clock.schedule_once(self.delay,.5)
     def delay(self,dt):
-        
         try:
             from libsk import LibSK
             
