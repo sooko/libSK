@@ -20,9 +20,12 @@ libsk/assets/fonts/code_point.txt
 libsk/assets/fonts/fontello.ttf
 libsk/assets/fonts/hemi.ttf
 libsk/assets/fonts/ico.ttf
+libsk/assets/fonts/icon.ttf
+libsk/assets/fonts/icon_outline.otf
 libsk/assets/fonts/lcd-7.otf
 libsk/assets/fonts/lcd-7.ttf
 libsk/assets/fonts/modern.ttf
+libsk/assets/fonts/open_sans.ttf
 libsk/assets/fonts/twotone.otf
 libsk/assets/fonts/twotone.txt
 libsk/assets/fonts/zeroes.ttf

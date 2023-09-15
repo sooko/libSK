@@ -207,36 +207,54 @@ class ChartBorder(Widget):
 
 
 class SKChart(FloatLayout):
-    label_x_height   = NumericProperty(dp(40))
-    label_y_width   = NumericProperty(dp(40))
-    label_font_size = NumericProperty(dp(12))
-    major_x         = NumericProperty(10)
-    major_y         = NumericProperty(8)
-    max_y_value     = NumericProperty(15)
-    min_y_value     = NumericProperty(11)
-    max_x_value     = NumericProperty(10)
-    min_x_value     = NumericProperty(0)
-    border_color       =ListProperty([1,1,1,1])
-    border_left_color  =ListProperty([1,1,1,1])
-    border_right_color =ListProperty([1,1,1,1])
-    border_bottom_color=ListProperty([1,1,1,1])
-    border_top_color=ListProperty([1,1,1,1])
-    grid_x_color    =ListProperty([1,1,1,1])
-    grid_y_color    =ListProperty([1,1,1,1])
-    label_x_color    =ListProperty([1,1,1,1])
-    label_y_color    =ListProperty([1,1,1,1])
+    label_x_height        = NumericProperty(dp(40))
+    label_y_width         = NumericProperty(dp(40))
+    label_font_size       = NumericProperty(dp(12))
+    major_x               = NumericProperty(10)
+    major_y               = NumericProperty(8)
+    max_y_value           = NumericProperty(15)
+    min_y_value           = NumericProperty(11)
+    max_x_value           = NumericProperty(10)
+    min_x_value           = NumericProperty(0)
+    border_color          =ListProperty([1,1,1,1])
+    border_left_color     =ListProperty([1,1,1,1])
+    border_right_color    =ListProperty([1,1,1,1])
+    border_bottom_color   =ListProperty([1,1,1,1])
+    border_top_color      =ListProperty([1,1,1,1])
+    grid_x_color          =ListProperty([1,1,1,1])
+    grid_y_color          =ListProperty([1,1,1,1])
+    label_x_color         =ListProperty([1,1,1,1])
+    label_y_color         =ListProperty([1,1,1,1])
     horizon_spacer_width  =NumericProperty(20)
     vertical_spacer_height=NumericProperty(20)    
 
 
     def __init__(self, **kwargs):
         super(SKChart,self).__init__(**kwargs)
+        Clock.unschedule(self.create)
         Clock.schedule_once(self.create,.2)
+        
     def format_float(self,num):
         if num.is_integer():
             return int(num)
         else:
             return num
+    # def on_max_y_value(self,a,b):
+    #     # pass
+    #     Clock.unschedule(self.create)
+    #     Clock.schedule_once(self.create,.2)
+    
+    # def on_min_y_value(self,a,b):
+    #     # pass
+    #     Clock.unschedule(self.create)
+    #     Clock.schedule_once(self.create,.2)
+        
+        
+    def is_int(self,value):
+        ret=False
+        if isinstance(value, int):
+            ret=True
+        return ret
     def create(self,dt):
         self.ids.root_grid_y.clear_widgets()
         self.ids.root_label_y.clear_widgets()
@@ -246,13 +264,23 @@ class SKChart(FloatLayout):
         step_x=(self.max_x_value-self.min_x_value)/self.major_x
         for i in range(self.major_y):
             y_label=self.format_float(self.max_y_value-i*step_y)
-            str_label_y="{}".format(y_label)
+            if self.is_int(y_label):
+                str_label_y="{:.0f}".format(y_label)
+            else:
+                str_label_y="{:.1f}".format(y_label)
             self.ids.root_grid_y.add_widget(SKChartGridY(color=self.grid_y_color))
             self.ids.root_label_y.add_widget(SKChartLabelY(color=self.label_y_color,font_size=self.label_font_size,text=str_label_y))
         for i in range(self.major_x):
             self.ids.root_grid_x.add_widget(SKChartGridX(color=self.grid_x_color))
             x_label=self.min_x_value+step_x+i*step_x
             self.ids.root_label_x.add_widget(SKChartLabelX(color=self.label_x_color,font_size=self.label_font_size,text=str(self.format_float(x_label))))
-    
-    
-
+    def on_label_y_color(self,a,b):
+        self.ids.root_label_y.clear_widgets()
+        step_y=(self.max_y_value-self.min_y_value)/self.major_y
+        for i in range(self.major_y):
+            y_label=self.format_float(self.max_y_value-i*step_y)
+            if self.is_int(y_label):
+                str_label_y="{:.0f}".format(y_label)
+            else:
+                str_label_y="{:.1f}".format(y_label)
+            self.ids.root_label_y.add_widget(SKChartLabelY(color=self.label_y_color,font_size=self.label_font_size,text=str_label_y))

@@ -18,7 +18,7 @@ class MenuItem(EventDispatcher):
     icon_color=ColorProperty([1,1,1,1])
     name_color=ColorProperty([1,1,1,1])
     icon_font_name=StringProperty("assets/fonts/ico.ttf")
-    name_font_name=StringProperty("assets/fonts/aggresa.ttf")
+    name_font_name=StringProperty("assets/fonts/open_sans.ttf")
     icon_font_size=NumericProperty(dp(14))
     name_font_size=NumericProperty(dp(14))
     
@@ -73,14 +73,10 @@ class GridMenu(GridLayout):
 
     icon_color=ColorProperty([1,1,1,1])
     name_color=ColorProperty([1,1,1,1])
-
-    icon_font_name=StringProperty("assets/fonts/ico.ttf")
-    name_font_name=StringProperty("assets/fonts/aggresa.ttf")
-    
+    icon_font_name=StringProperty("assets/fonts/icon_outline.otf")
+    name_font_name=StringProperty("assets/fonts/open_sans.ttf")
     icon_font_size=NumericProperty(dp(14))
     name_font_size=NumericProperty(dp(14))
-
-    
     def __init__(self, **kwargs):
         super(GridMenu,self).__init__(**kwargs)
         self.menu_data={
