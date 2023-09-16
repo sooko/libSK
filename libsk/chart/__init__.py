@@ -177,7 +177,6 @@ class RootLabelX(BoxLayout):
     # pass
 
 class RootMinValueLabel(FloatLayout):
-    # pass
     label_y_color   =ListProperty([1,1,1,1])
     label_x_color   =ListProperty([1,1,1,1])
     label_font_size =NumericProperty(14)
@@ -239,15 +238,6 @@ class SKChart(FloatLayout):
             return int(num)
         else:
             return num
-    # def on_max_y_value(self,a,b):
-    #     # pass
-    #     Clock.unschedule(self.create)
-    #     Clock.schedule_once(self.create,.2)
-    
-    # def on_min_y_value(self,a,b):
-    #     # pass
-    #     Clock.unschedule(self.create)
-    #     Clock.schedule_once(self.create,.2)
         
         
     def is_int(self,value):
@@ -284,3 +274,12 @@ class SKChart(FloatLayout):
             else:
                 str_label_y="{:.1f}".format(y_label)
             self.ids.root_label_y.add_widget(SKChartLabelY(color=self.label_y_color,font_size=self.label_font_size,text=str_label_y))
+
+    def on_max_x_value(self,a,b):
+        self.ids.root_label_x.clear_widgets()
+        step_x=(self.max_x_value-self.min_x_value)/self.major_x
+        for i in range(self.major_x):
+            x_label=self.min_x_value+step_x+i*step_x
+            self.ids.root_label_x.add_widget(SKChartLabelX(color=self.label_x_color,font_size=self.label_font_size,text=str(self.format_float(x_label))))
+
+        

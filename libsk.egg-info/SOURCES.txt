@@ -26,8 +26,6 @@ libsk/assets/fonts/lcd-7.otf
 libsk/assets/fonts/lcd-7.ttf
 libsk/assets/fonts/modern.ttf
 libsk/assets/fonts/open_sans.ttf
-libsk/assets/fonts/twotone.otf
-libsk/assets/fonts/twotone.txt
 libsk/assets/fonts/zeroes.ttf
 libsk/assets/images/s.png
 libsk/assets/images/sooko.png
