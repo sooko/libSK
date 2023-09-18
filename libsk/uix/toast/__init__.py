@@ -12,7 +12,7 @@ Builder.load_file("toast.kv")
                     
 
 class Toast(FloatLayout):
-    toast_icon="/home/sooko/prj/prj_cursor/libsk/libsk/assets/images/s_small.png"
+    toast_icon=StringProperty("/home/sooko/prj/prj_cursor/libsk/libsk/assets/images/s_small.png")
     toast_y=NumericProperty(.1)
     background_color=ColorProperty([.1,.1,.1,1])
     toast_text =StringProperty("download failed")
