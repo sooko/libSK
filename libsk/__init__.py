@@ -1,6 +1,7 @@
 from kivy.uix.floatlayout import FloatLayout
 from kivy.lang.builder import Builder
 from .uix.responsive_grid import ResponsiveGrid
+from .uix.dialog import ConfirmationDialog
 import os.path
 from kivy.resources import resource_add_path
 resource_add_path(os.path.dirname(__file__))

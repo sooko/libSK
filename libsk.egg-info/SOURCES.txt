@@ -28,6 +28,7 @@ libsk/assets/fonts/modern.ttf
 libsk/assets/fonts/open_sans.ttf
 libsk/assets/fonts/zeroes.ttf
 libsk/assets/images/s.png
+libsk/assets/images/s_small.png
 libsk/assets/images/sooko.png
 libsk/chart/__init__.py
 libsk/menus/__init__.py
@@ -38,6 +39,8 @@ libsk/uix/__init__.py
 libsk/uix/__ripple.py
 libsk/uix/carts/__init__.py
 libsk/uix/carts/cart.kv
+libsk/uix/dialog/__init__.py
+libsk/uix/dialog/dialog.kv
 libsk/uix/loading/__init__.py
 libsk/uix/navigationdrawer/__init__.py
 libsk/uix/navigationdrawer/navigationdrawer.kv
@@ -48,6 +51,8 @@ libsk/uix/responsive_grid/__init__.py
 libsk/uix/responsive_grid/responsive_grid.kv
 libsk/uix/ripple/__init__.py
 libsk/uix/sparator/__init__.py
+libsk/uix/sparator/sparator.kv
 libsk/uix/toast/__init__.py
+libsk/uix/toast/toast.kv
 libsk/uix/topnav/__init__.py
 libsk/uix/topnav/topnav.kv

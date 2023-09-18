@@ -1,0 +1,50 @@
+<Toast>:
+    background_color:[.1, .1,.1, 1]
+    pos_hint: {'center_x': 0.5,'center_y': 0.5}
+    Button:
+        id:btn
+        size_hint:.7,None
+        height:dp(30)
+        pos_hint: {'center_x': 0.5,'center_y': 0.1}
+        background_color:0,0,0,0
+    StencilView:
+        size_hint:None,None
+        size:btn.size[0]*root.anim_value/100,btn.size[1]
+        x:btn.x
+        y:btn.y
+        FloatLayout:
+            pos:btn.pos
+            size:btn.size
+            BoxLayout:
+                canvas:
+                    Color:
+                        rgba: root.background_color
+                    RoundedRectangle:
+                        size: self.size[0]+dp(30), self.size[1]#+dp(30)
+                        pos: self.pos[0]-dp(10),self.pos[1]#-dp(15)
+                        radius:dp(10),dp(10),dp(10),dp(10)
+                pos_hint:{"center_x":.5,"center_y":.5}
+                size_hint:None,1
+                width:self.minimum_width
+                FloatLayout:
+                    size_hint:None,1
+                    width:dp(20)
+                    Widget:
+                        pos_hint:{"center_x":.5,"center_y":.5}
+                        size_hint:None,None
+                        size:min(self.parent.size),min(self.parent.size)
+                        canvas:
+                            Color:
+                            Rectangle:
+                                size: self.size[0], self.size[1]
+                                pos: self.pos
+                                source:root.toast_icon
+                Widget:
+                    size_hint:None,1
+                    width:dp(5)
+                Label:     
+                    size_hint:None,1
+                    width:self.texture_size[0]+dp(10)
+                    background_color:0,0,0,0
+                    text:root.toast_text
+                    font_size:dp(14)

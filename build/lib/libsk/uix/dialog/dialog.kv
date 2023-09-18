@@ -1,0 +1,52 @@
+<DialogButton@RippleButton>:
+    color:0,0,0,1
+    ripple_color:.5,.5,.5,1
+<ConfirmationDialog>:
+    pos_hint:{"center_x":.5,"center_y":.5}
+    background_color:1,.98,1,1
+    dialog_width:dp(200)
+    Button:
+        pos_hint:{"center_x":.5,"center_y":.5}
+        background_color:0,0,0,.2
+    BoxLayout:
+        id:bx
+        pos_hint:{"center_x":.5,"center_y":.5}
+        size_hint: None, None
+        width:root.dialog_width
+        height:self.minimum_height
+        orientation: 'vertical'
+        canvas:
+            Color:
+                rgba: root.background_color
+            RoundedRectangle:
+                size: self.size[0]+dp(20), self.size[1]+dp(10)
+                pos: self.pos[0]-dp(10),self.pos[1]
+                radius:dp(5),dp(5),dp(5),dp(5)
+        Label:
+            size_hint:1,None
+            height:self.texture_size[1]
+            text:root.dialog_text
+            color:0,0,0,1
+            text_size:self.size[0],None
+            font_size:dp(14)
+            markup:True
+            halign:"center"
+        SparatorHorizon:
+            color:0,0,0,.1
+        BoxLayout:
+            size_hint:1,None
+            height:dp(40)
+            DialogButton:
+                font_size: self.height*.4
+                text:root.negative_text
+                font_size: dp(16)
+                color:root.negative_color
+            SparatorVertical:
+                color:0,0,0,.1
+            DialogButton:
+                font_size: dp(16)
+                text:root.positive_text
+                color:root.positive_color
+            
+
+                
