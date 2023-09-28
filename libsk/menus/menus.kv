@@ -27,7 +27,7 @@
             size_hint:1,None
             height:dp(16)
             font_size: root.icon_font_size
-            font_name: '../assets/fonts/aggresa.ttf'
+            font_name: root.name_font_name
             bold:True
 
     RippleButton:
@@ -39,6 +39,8 @@
     selected_color:0,0,1,1
     not_selected_color:0,0,0,0
     selection_source:""
+
+
     
     ToggleButton:
         group:"menus"
@@ -70,13 +72,6 @@
             valign:"middle"
             text_size:self.size
             font_name:root.name_font_name
-# <MenuItemTextBesideIcon>:
-#     selected_color:0,1,1,1
-
-#     not_selected_color:0,0,0,0
-
-
-
 
 
 <GridMenu>:

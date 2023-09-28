@@ -16,3 +16,11 @@ class LibskEllipse(Widget):
     source=StringProperty("")
     def __init__(self, **kwargs):
         super(LibskEllipse,self).__init__(**kwargs)
+
+from kivy.uix.floatlayout import FloatLayout
+class LibskSquare(FloatLayout):
+    color=ColorProperty([1,1,1,1])
+    source=StringProperty("")
+    scale=NumericProperty(1)
+    def __init__(self, **kwargs):
+        super(LibskSquare,self).__init__(**kwargs)

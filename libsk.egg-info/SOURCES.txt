@@ -32,6 +32,7 @@ libsk/assets/images/s_small.png
 libsk/assets/images/sooko.png
 libsk/chart/__init__.py
 libsk/menus/__init__.py
+libsk/menus/menu_file.json
 libsk/menus/menus.kv
 libsk/shape/__init__.py
 libsk/shape/shape.kv
