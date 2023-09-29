@@ -65,6 +65,8 @@
             text:root.data["icon"]
             font_name:root.icon_font_name
             font_size:root.icon_font_size
+            color:root.icon_color
+            
         Label:
             text:root.data["name"]
             font_size:root.icon_font_size
@@ -72,12 +74,12 @@
             valign:"middle"
             text_size:self.size
             font_name:root.name_font_name
+            color:root.name_color
 
 
 <GridMenu>:
     cols:3
     size_hint: 1, None
     height:self.minimum_height
-    
     
     

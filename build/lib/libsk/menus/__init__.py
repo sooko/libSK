@@ -59,9 +59,7 @@ class MenuItemTextUnderIcon(FloatLayout,MenuItem):
     pass
 
 class MenuItemTextBesideIcon(FloatLayout,MenuItem):
-
     pass
-    # icon_font_name=StringProperty("assets/fonts/ico.ttf")
 
 
 class GridMenu(GridLayout):
@@ -71,7 +69,6 @@ class GridMenu(GridLayout):
     menu_item=ObjectProperty(MenuItemTextUnderIcon)
     item=ObjectProperty()
     data=DictProperty({})
-
     icon_color=ColorProperty([1,1,1,1])
     name_color=ColorProperty([1,1,1,1])
     icon_font_name=StringProperty("assets/fonts/icon_outline.otf")
@@ -146,3 +143,24 @@ class GridMenuTextUnderIcon(GridMenu):
     menu_item=MenuItemTextUnderIcon
 class GridMenuTextBesideIcon(GridMenu):
     menu_item=MenuItemTextBesideIcon
+
+
+# class MenuFloating(GridMenu):
+#     caller=ObjectProperty(None)
+
+#     def __init__(self, **kwargs):
+#         super(MenuFloating,self).__init__(**kwargs)
+    
+    
+    
+    
+    
+
+
+    
+
+
+
+
+
+
