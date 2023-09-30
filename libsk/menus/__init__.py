@@ -63,7 +63,6 @@ class MenuItemTextBesideIcon(FloatLayout,MenuItem):
 
 
 class GridMenu(GridLayout):
-
     __events__=("on_menu_selected","on_event4_selected","on_event3_selected","on_event2_selected","on_event1_selected")
     menu_data=DictProperty({})
     menu_item=ObjectProperty(MenuItemTextUnderIcon)

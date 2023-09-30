@@ -4,44 +4,12 @@ from kivy.uix.floatlayout import FloatLayout
 from kivy.animation import Animation
 from kivy.metrics import dp
 from kivy.properties import StringProperty, NumericProperty, DictProperty,ListProperty
-Builder.load_string("""
-<LoadingCircle>:
-    BoxLayout:
-        orientation: 'vertical'
-        size_hint:1,None
-        height:self.minimum_height
-        pos_hint: {'center_x': 0.5,'center_y': 0.7}
-        Widget:
-            size_hint:None,None
-            pos_hint: {'center_x': 0.5,'center_y': 0.5}
-            size:min(root.size)*root.scale/100 , min(root.size)*root.scale/100
-            
-            canvas:
-                Color:
-                    rgba: root.background_color
-                Line:
-                    width: root.line_width*1.8
-                    circle:
-                        (self.center_x, self.center_y, min(self.width, self.height)
-                        /2)
-                    cap:"none"
-                Color:
-                    rgba: root.color
-                Line:
-                    width: root.line_width
-                    circle:
-                        (self.center_x, self.center_y, min(self.width, self.height)
-                        /2,root.angle[0],root.angle[1])
-                    cap:"none"
-        Label:
-            size_hint:1,None
-            height:dp(100)
-            text: root.loading_text
-            font_size: dp(18)
-        
-    
+import os.path
+from kivy.resources import resource_add_path
+resource_add_path(os.path.dirname(__file__))
+Builder.unload_file("loading.kv")
+Builder.load_file("loading.kv")
 
-""")
 class LoadingCircle(FloatLayout):
     color=ListProperty([1,1,1,1])
     background_color=ListProperty([1,1,1,.2])

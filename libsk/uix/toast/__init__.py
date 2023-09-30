@@ -20,14 +20,17 @@ class Toast(FloatLayout):
 
     def __init__(self, **kwargs):
         super(Toast,self).__init__(**kwargs)
-        
         # self.do_toast("loading...",2)
     def do_toast(self,toast_text,duration):
+        # self.end_toast(0)
+        Clock.unschedule(self.end_toast)
         self.toast_text=toast_text
         anim=Animation(anim_value=100,duration=.3)
         anim.start(self)
         Clock.schedule_once(self.end_toast,1+duration)
+
     def end_toast(self,dt):
-        self.anim_value=0
+        anim=Animation(anim_value=0,duration=.3)
+        anim.start(self)
     
         

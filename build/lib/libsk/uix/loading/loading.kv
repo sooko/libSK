@@ -1,0 +1,22 @@
+<LoadingCircle>:
+    Widget:
+        size_hint:None,None
+        pos_hint: {'center_x': 0.5,'center_y': 0.5}
+        size:min(root.size)*root.scale/100 , min(root.size)*root.scale/100
+        canvas:
+            Color:
+                rgba: root.background_color
+            Line:
+                width: root.line_width*1.8
+                circle:
+                    (self.center_x, self.center_y, min(self.width, self.height)
+                    /2)
+                cap:"none"
+            Color:
+                rgba: root.color
+            Line:
+                width: root.line_width
+                circle:
+                    (self.center_x, self.center_y, min(self.width, self.height)
+                    /2,root.angle[0],root.angle[1])
+                cap:"none"

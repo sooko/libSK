@@ -43,6 +43,7 @@ libsk/uix/carts/cart.kv
 libsk/uix/dialog/__init__.py
 libsk/uix/dialog/dialog.kv
 libsk/uix/loading/__init__.py
+libsk/uix/loading/loading.kv
 libsk/uix/navigationdrawer/__init__.py
 libsk/uix/navigationdrawer/navigationdrawer.kv
 libsk/uix/navigationdrawer/navigationdrawer_gradient_ltor.png
