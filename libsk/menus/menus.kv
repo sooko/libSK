@@ -4,9 +4,16 @@
     pos_hint: {'center_x': 0.5,'center_y': 0.5}
     BoxLayout:
         size_hint:None,None
-        size:min(self.parent.size)*.9,min(self.parent.size)*.9
+        size:min(self.parent.size),min(self.parent.size)
         pos_hint: {'center_x': 0.5,'center_y': 0.5}
         orientation: 'vertical'
+        canvas.before:
+            Color:
+                rgba:root.round_color
+            RoundedRectangle:
+                size:self.size[0]-dp(2),self.size[1]-dp(2)
+                pos:self.pos[0]+dp(1),self.pos[1]+dp(1)
+                radius:dp(5),dp(5),dp(5),dp(5)
         FloatLayout:
             Label:
                 pos_hint: {'center_x': 0.5,'center_y': 0.5}
@@ -20,28 +27,31 @@
                         pos: self.pos
                         radius: [dp(10), dp(10),dp(10), dp(10)]
                         source:root.data["icon"]
-                        
+
+            Label:
+                pos_hint: {'center_x': 0.5,'y': -.071}
+                text: root.data["name"]
+                color:root.name_color
+                size_hint:1,.125
+                font_size:self.height
+
+
         Label:
-            text: root.data["name"]
+            # text: root.data["name"]
             color:root.name_color
-            size_hint:1,None
-            height:dp(16)
-            font_size: root.icon_font_size
-            font_name: root.name_font_name
-            bold:True
+            size_hint:1,.2
+            # height:min(dp(30),root.height*.3)
 
     RippleButton:
         size_hint:None,None
         size:min(self.parent.size),min(self.parent.size)
         on_press:root.dispatch("on_press")
         pos_hint: {'center_x': 0.5,'center_y': 0.5}
+
 <MenuItemTextBesideIcon>:
     selected_color:0,0,1,1
     not_selected_color:0,0,0,0
     selection_source:""
-
-
-    
     ToggleButton:
         group:"menus"
         pos_hint: {'center_x': 0.5,'center_y': 0.5}

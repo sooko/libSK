@@ -22,6 +22,8 @@ class MenuItem(EventDispatcher):
     name_font_name=StringProperty("assets/fonts/open_sans.ttf")
     icon_font_size=NumericProperty(dp(14))
     name_font_size=NumericProperty(dp(14))
+    background_color=ListProperty([1,1,1,1])
+    round_color=ListProperty([1,1,1,1])
     
     radius=ListProperty([dp(10),dp(10),dp(10), dp(10)])
     __events__=("on_event1","on_event2","on_event3","on_event4","on_press")
@@ -55,10 +57,13 @@ class MenuItem(EventDispatcher):
     
     
 class MenuItemTextUnderIcon(FloatLayout,MenuItem):
-    # icon_font_name=StringProperty("assets/fonts/ico.ttf")
+    # background_color=ListProperty([0,0,0,0])
+    # font_size=NumericProperty(dp)
     pass
 
+
 class MenuItemTextBesideIcon(FloatLayout,MenuItem):
+    # background_color=ListProperty([0,0,0,0])
     pass
 
 
@@ -143,16 +148,6 @@ class GridMenuTextUnderIcon(GridMenu):
 class GridMenuTextBesideIcon(GridMenu):
     menu_item=MenuItemTextBesideIcon
 
-
-# class MenuFloating(GridMenu):
-#     caller=ObjectProperty(None)
-
-#     def __init__(self, **kwargs):
-#         super(MenuFloating,self).__init__(**kwargs)
-    
-    
-    
-    
     
 
 
